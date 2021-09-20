@@ -20,7 +20,16 @@ namespace WebLogger.Controllers
         protected List<Student> _students = new() {
             new() { Id = 1, Name = "Jamal", ContactNo = "0121683" },
             new() { Id = 2, Name = "Rik", ContactNo = "546512" },
-            new() { Id = 3, Name = "Jimi", ContactNo = "876513" }
+            new() { Id = 3, Name = "Jimi", ContactNo = "876513" },
+            new() { Id = 4, Name = "Rick", ContactNo = "876513" },
+            new() { Id = 5, Name = "Name-5", ContactNo = "876513" },
+            new() { Id = 6, Name = "Name-6", ContactNo = "876513" },
+            new() { Id = 7, Name = "Name-7", ContactNo = "876513" },
+            new() { Id = 8, Name = "Name-8", ContactNo = "876513" },
+            new() { Id = 9, Name = "Name-9", ContactNo = "876513" },
+            new() { Id = 10, Name = "Name-10", ContactNo = "876513" },
+            new() { Id = 11, Name = "Name-11", ContactNo = "876513" },
+            new() { Id = 12, Name = "Name-12", ContactNo = "876513" }
         };
 
         ILogger<Student> _logger;
@@ -43,16 +52,12 @@ namespace WebLogger.Controllers
             var student = _students.FirstOrDefault(x => x.Id == id);
 
 
-            LoggingFeature.loggingLevel.MinimumLevel = LogEventLevel.Information;
-            Log.Information("Student Deleted: {@Student}", student);
-
-            LoggingFeature.loggingLevel.MinimumLevel = LogEventLevel.Debug;
-            Log.Debug("Student Deleted: {@Student} {ThreadId}", student);
-            
-            Log.Error("Student Deleted: {@Student}", student);
-            //Log.Information("Student Deleted: {@Student}", student);
+            //LoggingFeature.loggingLevel.MinimumLevel = LogEventLevel.Information;
             //Log.Information("Student Deleted: {@Student}", student);
 
+
+            Log.Information("Students: {@Student}", new { Students = _students });
+           
             return Ok(student);
         }
 
@@ -102,7 +107,7 @@ namespace WebLogger.Controllers
 
 
                 var sensorInput = new { Latitude = 25, Longitude = 134 };
-                Log.Information("Processing {@SensorInput}", sensorInput);
+                Log.Information("Processing {$SensorInput}", sensorInput);
             }
             catch (Exception ex)
             {

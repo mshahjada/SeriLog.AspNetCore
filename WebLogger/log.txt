@@ -1,76 +1,45 @@
-2021-09-16 15:22:02.864 +06:00 [INF] Now listening on: https://localhost:5001
-2021-09-16 15:22:02.904 +06:00 [INF] Now listening on: http://localhost:5000
-2021-09-16 15:22:02.905 +06:00 [INF] Application started. Press Ctrl+C to shut down.
-2021-09-16 15:22:02.907 +06:00 [INF] Hosting environment: Development
-2021-09-16 15:22:02.908 +06:00 [INF] Content root path: C:\Users\BS581\source\repos\WebLogger\WebLogger
-2021-09-16 15:22:03.469 +06:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - -
-2021-09-16 15:22:03.576 +06:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - - - 200 - text/html;charset=utf-8 109.7998ms
-2021-09-16 15:22:03.751 +06:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - -
-2021-09-16 15:22:03.913 +06:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 164.9995ms
-2021-09-16 15:22:30.962 +06:00 [INF] Request starting HTTP/2 DELETE https://localhost:5001/api/student?id=1 - -
-2021-09-16 15:22:30.993 +06:00 [INF] Executing endpoint 'WebLogger.Controllers.StudentController.Delete (WebLogger)'
-2021-09-16 15:22:31.019 +06:00 [INF] Route matched with {action = "Delete", controller = "Student"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int32) on controller WebLogger.Controllers.StudentController (WebLogger).
-2021-09-16 15:22:31.093 +06:00 [INF] Executing action method WebLogger.Controllers.StudentController.Delete (WebLogger) - Validation state: "Valid"
-2021-09-16 15:22:35.079 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
-2021-09-16 15:22:35.085 +06:00 [INF] Student json: WebLogger.Model.Student
-2021-09-16 15:22:35.091 +06:00 [INF] Executed action method WebLogger.Controllers.StudentController.Delete (WebLogger), returned result Microsoft.AspNetCore.Mvc.OkResult in 3989.9087ms.
-2021-09-16 15:22:35.110 +06:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
-2021-09-16 15:22:35.115 +06:00 [INF] Executed action WebLogger.Controllers.StudentController.Delete (WebLogger) in 4088.7261ms
-2021-09-16 15:22:35.117 +06:00 [INF] Executed endpoint 'WebLogger.Controllers.StudentController.Delete (WebLogger)'
-2021-09-16 15:22:35.118 +06:00 [INF] Request finished HTTP/2 DELETE https://localhost:5001/api/student?id=1 - - - 200 0 - 4155.8622ms
-2021-09-16 15:24:44.169 +06:00 [INF] Now listening on: https://localhost:5001
-2021-09-16 15:24:44.228 +06:00 [INF] Now listening on: http://localhost:5000
-2021-09-16 15:24:44.237 +06:00 [INF] Application started. Press Ctrl+C to shut down.
-2021-09-16 15:24:44.238 +06:00 [INF] Hosting environment: Development
-2021-09-16 15:24:44.239 +06:00 [INF] Content root path: C:\Users\BS581\source\repos\WebLogger\WebLogger
-2021-09-16 15:24:44.932 +06:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - -
-2021-09-16 15:24:45.021 +06:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - - - 200 - text/html;charset=utf-8 94.9784ms
-2021-09-16 15:24:45.165 +06:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - -
-2021-09-16 15:24:45.278 +06:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 112.9437ms
-2021-09-16 15:24:54.463 +06:00 [INF] Request starting HTTP/2 DELETE https://localhost:5001/api/student?id=1 - -
-2021-09-16 15:24:54.503 +06:00 [INF] Executing endpoint 'WebLogger.Controllers.StudentController.Delete (WebLogger)'
-2021-09-16 15:24:54.527 +06:00 [INF] Route matched with {action = "Delete", controller = "Student"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Delete(Int32) on controller WebLogger.Controllers.StudentController (WebLogger).
-2021-09-16 15:24:54.600 +06:00 [INF] Executing action method WebLogger.Controllers.StudentController.Delete (WebLogger) - Validation state: "Valid"
-2021-09-16 15:24:57.820 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
-2021-09-16 15:24:57.839 +06:00 [INF] Student json: WebLogger.Model.Student
-2021-09-16 15:24:57.844 +06:00 [INF] Executed action method WebLogger.Controllers.StudentController.Delete (WebLogger), returned result Microsoft.AspNetCore.Mvc.OkResult in 3236.4319ms.
-2021-09-16 15:24:57.849 +06:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
-2021-09-16 15:24:57.854 +06:00 [INF] Executed action WebLogger.Controllers.StudentController.Delete (WebLogger) in 3319.8797ms
-2021-09-16 15:24:57.856 +06:00 [INF] Executed endpoint 'WebLogger.Controllers.StudentController.Delete (WebLogger)'
-2021-09-16 15:24:57.858 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 3386.2834 ms
-2021-09-16 15:24:57.860 +06:00 [INF] Request finished HTTP/2 DELETE https://localhost:5001/api/student?id=1 - - - 200 0 - 3397.2248ms
-2021-09-16 15:58:54.870 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
-2021-09-16 15:58:54.900 +06:00 [INF] Student json: WebLogger.Model.Student
-2021-09-16 15:58:54.904 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 4342.9424 ms
-2021-09-16 16:10:22.806 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
-2021-09-16 16:10:22.832 +06:00 [INF] Student json: ["WebLogger.Model.Student","WebLogger.Model.Student"]
-2021-09-16 16:10:22.836 +06:00 [INF] In my bowl I have ["Apple","Pear","Orange"]
-2021-09-16 16:10:22.842 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 1758.5368 ms
-2021-09-16 16:13:26.297 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
-2021-09-16 16:13:26.323 +06:00 [INF] Student json: ["WebLogger.Model.Student","WebLogger.Model.Student"]
-2021-09-16 16:13:26.329 +06:00 [INF] Source Contx { @Stu }
-2021-09-16 16:13:26.331 +06:00 [INF] In my bowl I have ["Apple","Pear","Orange"]
-2021-09-16 16:13:26.344 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 1674.5107 ms
-2021-09-16 16:15:35.388 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
-2021-09-16 16:15:35.412 +06:00 [INF] Student json: ["WebLogger.Model.Student","WebLogger.Model.Student"]
-2021-09-16 16:15:35.415 +06:00 [INF] Source Contx { @_Students }
-2021-09-16 16:15:35.417 +06:00 [INF] In my bowl I have ["Apple","Pear","Orange"]
-2021-09-16 16:15:35.432 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 3636.9608 ms
-2021-09-16 16:27:13.083 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
-2021-09-16 16:27:14.187 +06:00 [INF] Student json: ["WebLogger.Model.Student","WebLogger.Model.Student"]
-2021-09-16 16:27:17.470 +06:00 [INF] In my bowl I have ["Apple","Pear","Orange"]
-2021-09-16 16:27:17.502 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 7549.4425 ms
-2021-09-16 16:36:18.030 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
-2021-09-16 16:36:18.056 +06:00 [INF] Student json: ["WebLogger.Model.Student", "WebLogger.Model.Student"]
-2021-09-16 16:36:18.059 +06:00 [INF] In my bowl I have ["Apple","Pear","Orange"]
-2021-09-16 16:36:18.078 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 1430.6751 ms
-2021-09-16 16:43:09.736 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
-2021-09-16 16:43:09.764 +06:00 [INF] Student json: { Students = System.Collections.Generic.List`1[WebLogger.Model.Student] }
-2021-09-16 16:43:09.766 +06:00 [INF] In my bowl I have ["Apple","Pear","Orange"]
-2021-09-16 16:43:09.772 +06:00 [INF] Processing {"Latitude":25,"Longitude":134}
-2021-09-16 16:43:09.783 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 5338.5645 ms
-2021-09-16 16:44:41.861 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
-2021-09-16 16:44:41.889 +06:00 [INF] Student json: {"Students":[{"Id":2,"Name":"Rik","ContactNo":"546512","$type":"Student"},{"Id":3,"Name":"Jimi","ContactNo":"876513","$type":"Student"}]}
-2021-09-16 16:44:41.897 +06:00 [INF] In my bowl I have ["Apple","Pear","Orange"]
-2021-09-16 16:44:41.904 +06:00 [INF] Processing {"Latitude":25,"Longitude":134}
-2021-09-16 16:44:41.920 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 1640.5461 ms
+2021-09-20 11:53:25.984 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
+2021-09-20 11:53:26.012 +06:00 [INF] Student json: {"Students":[{"Id":2,"Name":"Rik","ContactNo":"546512","$type":"Student"},{"Id":3,"Name":"Jimi","ContactNo":"876513","$type":"Student"},{"Id":4,"Name":"Rick","ContactNo":"876513","$type":"Student"},{"Id":5,"Name":"Name-5","ContactNo":"876513","$type":"Student"},{"Id":6,"Name":"Name-6","ContactNo":"876513","$type":"Student"},{"Id":7,"Name":"Name-7","ContactNo":"876513","$type":"Student"},{"Id":8,"Name":"Name-8","ContactNo":"876513","$type":"Student"},{"Id":9,"Name":"Name-9","ContactNo":"876513","$type":"Student"},{"Id":10,"Name":"Name-10","ContactNo":"876513","$type":"Student"},{"Id":11,"Name":"Name-11","ContactNo":"876513","$type":"Student"},{"Id":12,"Name":"Name-12","ContactNo":"876513","$type":"Student"}]}
+2021-09-20 11:53:26.069 +06:00 [INF] In my bowl I have ["Apple","Pear","Orange"]
+2021-09-20 11:53:26.072 +06:00 [INF] Processing { Latitude = 25, Longitude = 134 }
+2021-09-20 11:53:26.076 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 1741.3037 ms
+2021-09-20 11:58:15.841 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
+2021-09-20 11:58:15.869 +06:00 [INF] Student json: {"Students":[{"Id":2,"Name":"Rik","ContactNo":"546512","$type":"Student"},{"Id":3,"Name":"Jimi","ContactNo":"876513","$type":"Student"},{"Id":4,"Name":"Rick","ContactNo":"876513","$type":"Student"},{"Id":5,"Name":"Name-5","ContactNo":"876513","$type":"Student"},{"Id":6,"Name":"Name-6","ContactNo":"876513","$type":"Student"},{"Id":7,"Name":"Name-7","ContactNo":"876513","$type":"Student"},{"Id":8,"Name":"Name-8","ContactNo":"876513","$type":"Student"},{"Id":9,"Name":"Name-9","ContactNo":"876513","$type":"Student"},{"Id":10,"Name":"Name-10","ContactNo":"876513","$type":"Student"},{"Id":11,"Name":"Name-11","ContactNo":"876513","$type":"Student"},{"Id":12,"Name":"Name-12","ContactNo":"876513","$type":"Student"}]}
+2021-09-20 11:58:15.925 +06:00 [INF] In my bowl I have ["Apple","Pear","Orange"]
+2021-09-20 11:58:15.928 +06:00 [INF] Processing { Latitude = 25, Longitude = 134 }
+2021-09-20 11:58:15.931 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 1408.1854 ms
+2021-09-20 12:30:39.380 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
+2021-09-20 12:30:39.407 +06:00 [INF] Student json: {"Students":[{"Id":2,"Name":"Rik","ContactNo":"546512","$type":"Student"},{"Id":3,"Name":"Jimi","ContactNo":"876513","$type":"Student"},{"Id":4,"Name":"Rick","ContactNo":"876513","$type":"Student"},{"Id":5,"Name":"Name-5","ContactNo":"876513","$type":"Student"},{"Id":6,"Name":"Name-6","ContactNo":"876513","$type":"Student"},{"Id":7,"Name":"Name-7","ContactNo":"876513","$type":"Student"},{"Id":8,"Name":"Name-8","ContactNo":"876513","$type":"Student"},{"Id":9,"Name":"Name-9","ContactNo":"876513","$type":"Student"},{"Id":10,"Name":"Name-10","ContactNo":"876513","$type":"Student"},{"Id":11,"Name":"Name-11","ContactNo":"876513","$type":"Student"},{"Id":12,"Name":"Name-12","ContactNo":"876513","$type":"Student"}]}
+2021-09-20 12:30:39.460 +06:00 [INF] In my bowl I have ["Apple","Pear","Orange"]
+2021-09-20 12:30:39.462 +06:00 [INF] Processing { Latitude = 25, Longitude = 134 }
+2021-09-20 12:30:39.466 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 1599.3069 ms
+2021-09-20 12:37:49.841 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
+2021-09-20 12:37:49.868 +06:00 [INF] Student json: {"Students":[{"Id":2,"Name":"Rik","ContactNo":"546512","$type":"Student"},{"Id":3,"Name":"Jimi","ContactNo":"876513","$type":"Student"},{"Id":4,"Name":"Rick","ContactNo":"876513","$type":"Student"},{"Id":5,"Name":"Name-5","ContactNo":"876513","$type":"Student"},{"Id":6,"Name":"Name-6","ContactNo":"876513","$type":"Student"},{"Id":7,"Name":"Name-7","ContactNo":"876513","$type":"Student"},{"Id":8,"Name":"Name-8","ContactNo":"876513","$type":"Student"},{"Id":9,"Name":"Name-9","ContactNo":"876513","$type":"Student"},{"Id":10,"Name":"Name-10","ContactNo":"876513","$type":"Student"},{"Id":11,"Name":"Name-11","ContactNo":"876513","$type":"Student"},{"Id":12,"Name":"Name-12","ContactNo":"876513","$type":"Student"}]}
+2021-09-20 12:37:49.924 +06:00 [INF] In my bowl I have ["Apple","Pear","Orange"]
+2021-09-20 12:37:49.927 +06:00 [INF] Processing { Latitude = 25, Longitude = 134 }
+2021-09-20 12:37:49.930 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 1700.9688 ms
+2021-09-20 12:38:57.145 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
+2021-09-20 12:38:57.174 +06:00 [INF] Student json: {"Students":[{"Id":2,"Name":"Rik","ContactNo":"546512","$type":"Student"},{"Id":3,"Name":"Jimi","ContactNo":"876513","$type":"Student"},{"Id":4,"Name":"Rick","ContactNo":"876513","$type":"Student"},{"Id":5,"Name":"Name-5","ContactNo":"876513","$type":"Student"},{"Id":6,"Name":"Name-6","ContactNo":"876513","$type":"Student"},{"Id":7,"Name":"Name-7","ContactNo":"876513","$type":"Student"},{"Id":8,"Name":"Name-8","ContactNo":"876513","$type":"Student"},{"Id":9,"Name":"Name-9","ContactNo":"876513","$type":"Student"},{"Id":10,"Name":"Name-10","ContactNo":"876513","$type":"Student"},{"Id":11,"Name":"Name-11","ContactNo":"876513","$type":"Student"},{"Id":12,"Name":"Name-12","ContactNo":"876513","$type":"Student"}]}
+2021-09-20 12:38:57.228 +06:00 [INF] In my bowl I have ["Apple","Pear","Orange"]
+2021-09-20 12:38:57.231 +06:00 [INF] Processing { Latitude = 25, Longitude = 134 }
+2021-09-20 12:38:57.234 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 1270.3975 ms
+2021-09-20 12:45:24.940 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
+2021-09-20 12:45:24.967 +06:00 [INF] Student json: {"Students":[{"Id":2,"Name":"Rik","ContactNo":"546512","$type":"Student"},{"Id":3,"Name":"Jimi","ContactNo":"876513","$type":"Student"},{"Id":4,"Name":"Rick","ContactNo":"876513","$type":"Student"},{"Id":5,"Name":"Name-5","ContactNo":"876513","$type":"Student"},{"Id":6,"Name":"Name-6","ContactNo":"876513","$type":"Student"},{"Id":7,"Name":"Name-7","ContactNo":"876513","$type":"Student"},{"Id":8,"Name":"Name-8","ContactNo":"876513","$type":"Student"},{"Id":9,"Name":"Name-9","ContactNo":"876513","$type":"Student"},{"Id":10,"Name":"Name-10","ContactNo":"876513","$type":"Student"},{"Id":11,"Name":"Name-11","ContactNo":"876513","$type":"Student"},{"Id":12,"Name":"Name-12","ContactNo":"876513","$type":"Student"}]}
+2021-09-20 12:45:25.023 +06:00 [INF] In my bowl I have ["Apple","Pear","Orange"]
+2021-09-20 12:45:25.026 +06:00 [INF] Processing { Latitude = 25, Longitude = 134 }
+2021-09-20 12:45:25.029 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 227.1812 ms
+2021-09-20 12:46:34.059 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
+2021-09-20 12:46:34.085 +06:00 [INF] Student json: {"Students":[{"Id":2,"Name":"Rik","ContactNo":"546512","$type":"Student"},{"Id":3,"Name":"Jimi","ContactNo":"876513","$type":"Student"},{"Id":4,"Name":"Rick","ContactNo":"876513","$type":"Student"},{"Id":5,"Name":"Name-5","ContactNo":"876513","$type":"Student"},{"Id":6,"Name":"Name-6","ContactNo":"876513","$type":"Student"},{"Id":7,"Name":"Name-7","ContactNo":"876513","$type":"Student"},{"Id":8,"Name":"Name-8","ContactNo":"876513","$type":"Student"},{"Id":9,"Name":"Name-9","ContactNo":"876513","$type":"Student"},{"Id":10,"Name":"Name-10","ContactNo":"876513","$type":"Student"},{"Id":11,"Name":"Name-11","ContactNo":"876513","$type":"Student"},{"Id":12,"Name":"Name-12","ContactNo":"876513","$type":"Student"}]}
+2021-09-20 12:46:34.139 +06:00 [INF] In my bowl I have ["Apple","Pear","Orange"]
+2021-09-20 12:46:34.141 +06:00 [INF] Processing { Latitude = 25, Longitude = 134 }
+2021-09-20 12:46:34.149 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 199.7421 ms
+2021-09-20 12:49:11.830 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
+2021-09-20 12:49:11.858 +06:00 [INF] Student json: {"Students":[{"Id":2,"Name":"Rik","ContactNo":"546512","$type":"Student"},{"Id":3,"Name":"Jimi","ContactNo":"876513","$type":"Student"},{"Id":4,"Name":"Rick","ContactNo":"876513","$type":"Student"},{"Id":5,"Name":"Name-5","ContactNo":"876513","$type":"Student"},{"Id":6,"Name":"Name-6","ContactNo":"876513","$type":"Student"},{"Id":7,"Name":"Name-7","ContactNo":"876513","$type":"Student"},{"Id":8,"Name":"Name-8","ContactNo":"876513","$type":"Student"},{"Id":9,"Name":"Name-9","ContactNo":"876513","$type":"Student"},{"Id":10,"Name":"Name-10","ContactNo":"876513","$type":"Student"},{"Id":11,"Name":"Name-11","ContactNo":"876513","$type":"Student"},{"Id":12,"Name":"Name-12","ContactNo":"876513","$type":"Student"}]}
+2021-09-20 12:49:11.912 +06:00 [INF] In my bowl I have ["Apple","Pear","Orange"]
+2021-09-20 12:49:11.915 +06:00 [INF] Processing { Latitude = 25, Longitude = 134 }
+2021-09-20 12:49:11.919 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 206.1969 ms
+2021-09-20 12:59:03.693 +06:00 [ERR] Student Deleted: {"Id":1,"Name":"Jamal","ContactNo":"0121683","$type":"Student"}
+2021-09-20 12:59:03.722 +06:00 [INF] Student json: {"Students":[{"Id":2,"Name":"Rik","ContactNo":"546512","$type":"Student"},{"Id":3,"Name":"Jimi","ContactNo":"876513","$type":"Student"},{"Id":4,"Name":"Rick","ContactNo":"876513","$type":"Student"},{"Id":5,"Name":"Name-5","ContactNo":"876513","$type":"Student"},{"Id":6,"Name":"Name-6","ContactNo":"876513","$type":"Student"},{"Id":7,"Name":"Name-7","ContactNo":"876513","$type":"Student"},{"Id":8,"Name":"Name-8","ContactNo":"876513","$type":"Student"},{"Id":9,"Name":"Name-9","ContactNo":"876513","$type":"Student"},{"Id":10,"Name":"Name-10","ContactNo":"876513","$type":"Student"},{"Id":11,"Name":"Name-11","ContactNo":"876513","$type":"Student"},{"Id":12,"Name":"Name-12","ContactNo":"876513","$type":"Student"}]}
+2021-09-20 12:59:03.774 +06:00 [INF] In my bowl I have ["Apple","Pear","Orange"]
+2021-09-20 12:59:03.776 +06:00 [INF] Processing { Latitude = 25, Longitude = 134 }
+2021-09-20 12:59:03.779 +06:00 [INF] HTTP DELETE /api/student?id=1 responded 200 in 204.7677 ms
