@@ -1,4 +1,4 @@
-# App.SerilLog
+# SeriLog.AspNetCore
 
 
 <u>Log event:</u>
