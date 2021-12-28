@@ -11,7 +11,7 @@ namespace WebLogger.Config
     {
         public static void AddConfigurationDepdency(this IServiceCollection services, IConfiguration configuration)
         {
-            services.Configure<AppLogger>(opt => configuration.GetSection("AppLogger").Bind(opt));
+            services.Configure<LoggerSettings>(opt => configuration.GetSection("AppLogger").Bind(opt));
         }
     }
 }

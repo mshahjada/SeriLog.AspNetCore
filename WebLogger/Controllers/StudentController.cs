@@ -39,12 +39,6 @@ namespace WebLogger.Controllers
             _logger = logger;
         }
 
-        //[HttpGet]
-        //public IActionResult Gets()
-        //{
-        //    return Ok(_students);
-        //}
-
 
         [HttpGet]
         public IActionResult Get(int id)
@@ -52,11 +46,9 @@ namespace WebLogger.Controllers
             var student = _students.FirstOrDefault(x => x.Id == id);
 
 
-            //LoggingFeature.loggingLevel.MinimumLevel = LogEventLevel.Information;
-            //Log.Information("Student Deleted: {@Student}", student);
+            LoggingFeature.loggingLevel.MinimumLevel = LogEventLevel.Information;
+            Log.Information("Students: {@Student}", student);
 
-
-            Log.Information("Students: {@Student}", new { Students = _students });
            
             return Ok(student);
         }
@@ -84,37 +76,13 @@ namespace WebLogger.Controllers
         [HttpDelete]
         public IActionResult Delete(int id)
         {
-            try
-            {
-                var student = _students.FirstOrDefault(x => x.Id == id);
-                if (student is null)
-                    throw new ObjectNotFoundException<Student>();
+            var student = _students.FirstOrDefault(x => x.Id == id);
+            if (student is null)
+                throw new ObjectNotFoundException<Student>();
 
-                _students.Remove(student);
+            _students.Remove(student);
 
-                Log.Error("Student Deleted: {@Student}", student);
-
-                Log.Information("Student json: {@List}", new { Students = _students });
-
-                //var scLog = Log.ForContext<Student>();
-
-                //dynamic obj = new { List = _students };
-
-                //scLog.Information("Source Contx { @Students }", obj);
-
-                var fruit = new[] { "Apple", "Pear", "Orange" };
-                Log.Information("In my bowl I have {Ruit}", fruit);
-
-
-                var sensorInput = new { Latitude = 25, Longitude = 134 };
-                Log.Information("Processing {$SensorInput}", sensorInput);
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
-           
+            Log.Information("Student Deleted: {@Student}", student);
 
             return Ok();
         }

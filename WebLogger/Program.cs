@@ -7,12 +7,14 @@ using Serilog;
 using Serilog.Configuration;
 using Serilog.Core;
 using Serilog.Events;
+using Serilog.Sinks.SystemConsole.Themes;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using WebLogger.Config;
 
 namespace WebLogger
 {
@@ -21,32 +23,31 @@ namespace WebLogger
         public static void Main(string[] args)
         {
 
-            var builder = new ConfigurationBuilder()
-                        .SetBasePath(Directory.GetCurrentDirectory())
-                        .AddJsonFile("credentials.json", true, reloadOnChange: true).Build();
+            var configuration = new ConfigurationBuilder()
+                        //.SetBasePath(Directory.GetCurrentDirectory())
+                        .AddJsonFile("appsettings.json", true, reloadOnChange: true).Build();
+
+            var loggerSettings = configuration.GetSection(nameof(LoggerSettings)).Get<LoggerSettings>();
 
 
+             var docStore = new DocumentStore() { Urls = loggerSettings.RavenDBSink.Urls, Database = loggerSettings.RavenDBSink.Database }.Initialize();
 
-            //const string seq_url = "http://localhost:5341/";
+            Log.Logger = new LoggerConfiguration()
+                       .MinimumLevel.ControlledBy(LoggingFeature.loggingLevel)
+                       .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
 
-            //var logs = new DocumentStore()
-            //{
-            //    Urls = new[] { "http://localhost:8080" },
-            //    Database = "WebLogger",
-            //}.Initialize();
-
-            //Log.Logger = new LoggerConfiguration()
-            //           //.MinimumLevel.Warning()
-            //           .MinimumLevel.ControlledBy(LoggingFeature.loggingLevel)
-            //           .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
-            //           //.Enrich.With(new ThreadEnricher())
-            //           .Enrich.WithEnvironmentName()
-            //           .Enrich.WithThreadId()
-            //           .WriteTo.Console()
-            //           //.WriteTo.File(@"C:\Users\BS581\source\repos\WebLogger\WebLogger\log.txt", rollingInterval: RollingInterval.Minute)
-            //           .WriteTo.RavenDB(logs)
-            //           .WriteTo.Seq(seq_url)
-            //           .CreateLogger();
+                        //.Enrich.With(new ThreadEnricher())
+                        //.Enrich.FromLogContext()
+                       .Enrich.WithProperty("TestLog", "Test")
+                       .Enrich.WithEnvironmentName()
+                       .Enrich.WithThreadId()
+                       .Enrich.WithTestd()
+    
+                       .WriteTo.Console(theme: AnsiConsoleTheme.Code)
+                       .WriteTo.File(loggerSettings.FilePath, rollingInterval: RollingInterval.Minute)
+                       .WriteTo.RavenDB(docStore)
+                       //.WriteTo.Seq(loggerSettings.SeqUrl)
+                       .CreateLogger();
 
 
             Serilog.Debugging.SelfLog.Enable(Console.Error);
@@ -58,19 +59,17 @@ namespace WebLogger
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .UseSerilog()
-                .UseSerilog((hostingContext, configuration) =>
-                {
-                    configuration
-                    .ReadFrom.Configuration(hostingContext.Configuration)
-                    .Enrich.FromLogContext()
-                    .Enrich.WithMachineName()
-                    .Enrich.WithThreadId();
-                    //.Enrich.WithProperty("WithMachineName", Environment.MachineName)
-                    //.Enrich.WithProperty("WithThreadId", Thread.CurrentThread.ManagedThreadId)
-
-
-                })
+                  .UseSerilog()
+                //.UseSerilog((ctx, conf) =>
+                //{
+                //    conf
+                //   .ReadFrom.Configuration(ctx.Configuration)
+                //   .Enrich.FromLogContext()
+                //   .Enrich.WithMachineName()
+                //   .Enrich.WithThreadId();
+                //    //.Enrich.WithProperty("WithMachineName", Environment.MachineName)
+                //    //.Enrich.WithProperty("WithThreadId", Thread.CurrentThread.ManagedThreadId)
+                //})
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
@@ -87,16 +86,30 @@ namespace WebLogger
         }
     }
 
+    public class TestEnricher : ILogEventEnricher
+    {
+        public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
+        {
+            logEvent.AddOrUpdateProperty(propertyFactory
+                .CreateProperty("TestLog", "Hello"));
+        }
+    }
+
     public static class CustomEnrich
     {
         public static LoggerConfiguration WithThreadId(this LoggerEnrichmentConfiguration enrich)
         {
             return enrich.With<ThreadEnricher>();
         }
+
+        public static LoggerConfiguration WithTestd(this LoggerEnrichmentConfiguration enrich)
+        {
+            return enrich.With<TestEnricher>();
+        }
     }
 
     public static class LoggingFeature
     {
-        public static LoggingLevelSwitch loggingLevel => new LoggingLevelSwitch(LogEventLevel.Information);
+        public static LoggingLevelSwitch loggingLevel => new LoggingLevelSwitch(LogEventLevel.Warning);
     }
 }
